@@ -41,6 +41,9 @@ void main(){
                     System.out.println("Primero debe asignar una traccion.");
                 }else{
                     Main.simularRecorrido(scanner, robot);
+                    robot.encenderLuces();
+
+
                 }
                 break;
 
