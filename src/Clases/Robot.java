@@ -8,11 +8,13 @@ public class Robot{
     private int potenciaBase;
     private iTraccion traccion;
     private int kmRecorridos;
+    private boolean lucesEncendidas;
 
     public Robot(String numeroDeSerie, int potenciaBase){
         this.numeroDeSerie = numeroDeSerie;
         this.potenciaBase = potenciaBase;
         this.kmRecorridos = 0;
+        this.lucesEncendidas=false;
     }
 
     public void setTraccion(iTraccion traccion){
@@ -51,6 +53,14 @@ public class Robot{
         return traccion.necesitaReemplazo(kmRecorridos);
     }
 
+    public void encenderLuces(){
+        if (!lucesEncendidas){
+            lucesEncendidas = true;
+            System.out.println("Las luces fueron encendidas.");
+        }else{
+            System.out.println("Las luces ya estan encendidas.");
+        }
+    }
     public int obtenerPotenciaFinal(){
         if (traccion == null){
             return potenciaBase;
